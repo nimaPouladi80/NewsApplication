@@ -50,6 +50,7 @@ android {
 }
 
 dependencies {
+    implementation( "com.squareup.retrofit2:converter-gson:2.1.0")
     implementation( "com.github.bumptech.glide:glide:4.16.0")
     implementation( "com.squareup.retrofit2:retrofit:2.11.0")
     implementation ("com.google.code.gson:gson:2.11.0")
@@ -65,6 +66,9 @@ dependencies {
     implementation(libs.androidx.material3)
     implementation(libs.androidx.recyclerview)
     implementation(libs.androidx.constraintlayout)
+    implementation(libs.androidx.appcompat)
+    implementation(libs.material)
+    implementation(libs.androidx.activity)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

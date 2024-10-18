@@ -1,6 +1,7 @@
 package com.newsapplication
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,8 +11,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 
 
-class NewsAdapter(var newsList:MutableList<News>,var contex:Context): RecyclerView.Adapter<NewsAdapter.ViewHolder>() {
-    class ViewHolder(view:View): RecyclerView.ViewHolder(view) {
+@Suppress("DEPRECATION")
+class NewsAdapter(var newsList:MutableList<News>, var contex:Context): RecyclerView.Adapter<NewsAdapter.ViewHolder>() {
+    @Suppress("DEPRECATION", "DEPRECATION")
+    inner class ViewHolder(view:View): RecyclerView.ViewHolder(view) {
         var title:TextView
         var dateAndWriter:TextView
         var description:TextView
@@ -22,6 +25,11 @@ class NewsAdapter(var newsList:MutableList<News>,var contex:Context): RecyclerVi
                 description=findViewById(R.id.description)
                 dateAndWriter=findViewById(R.id.dateAndWriter)
                 imageView=findViewById(R.id.imageView)
+                title.setOnClickListener{
+                    val intent=Intent(context,WebPageAcvtivity::class.java)
+                    intent.putExtra("url",newsList[adapterPosition].url)
+                    context.startActivity(intent)
+                }
             }
         }
 
