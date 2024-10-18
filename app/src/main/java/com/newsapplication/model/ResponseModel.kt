@@ -1,4 +1,4 @@
-package com.newsapplication
+package com.newsapplication.model
 
 class ResponseModel (
     val status:String,

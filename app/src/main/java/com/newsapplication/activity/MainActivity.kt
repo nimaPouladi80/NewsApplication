@@ -1,30 +1,19 @@
-package com.newsapplication
+package com.newsapplication.activity
 
 import android.os.Bundle
 import android.util.Log
 import android.widget.ProgressBar
 import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
-import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.core.view.isVisible
-import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.google.gson.GsonBuilder
-import com.google.gson.internal.GsonBuildConfig
-import com.newsapplication.ui.theme.NewsApplicationTheme
-import kotlinx.coroutines.delay
+import com.newsapplication.API.API
+import com.newsapplication.model.News
+import com.newsapplication.adaptor.NewsAdapter
+import com.newsapplication.R
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.runBlocking
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 

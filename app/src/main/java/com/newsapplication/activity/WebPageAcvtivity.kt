@@ -1,8 +1,9 @@
-package com.newsapplication
+package com.newsapplication.activity
 
 import android.os.Bundle
 import android.webkit.WebView
 import androidx.appcompat.app.AppCompatActivity
+import com.newsapplication.R
 
 class WebPageAcvtivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
