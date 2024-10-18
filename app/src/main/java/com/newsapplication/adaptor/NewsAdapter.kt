@@ -1,5 +1,6 @@
 package com.newsapplication.adaptor
 
+import android.annotation.SuppressLint
 import com.newsapplication.activity.WebPageAcvtivity
 import android.content.Context
 import android.content.Intent
@@ -16,12 +17,13 @@ import com.newsapplication.model.News
 
 @Suppress("DEPRECATION")
 class NewsAdapter(var newsList:MutableList<News>, var contex:Context): RecyclerView.Adapter<NewsAdapter.ViewHolder>() {
-    @Suppress("DEPRECATION", "DEPRECATION")
+
     inner class ViewHolder(view:View): RecyclerView.ViewHolder(view) {
         var title:TextView
         var dateAndWriter:TextView
         var description:TextView
         var imageView:ImageView
+
         init {
             view.apply {
                 title=findViewById(R.id.title)
@@ -38,6 +40,7 @@ class NewsAdapter(var newsList:MutableList<News>, var contex:Context): RecyclerV
 
 
     }
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
     val view= LayoutInflater.from(parent.context).inflate(R.layout.item_schematic,parent,false)
