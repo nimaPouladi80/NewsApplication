@@ -1,19 +1,21 @@
 package com.newsapplication
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 
 
-
-class NewsAdapter(var newsList:MutableList<News>): RecyclerView.Adapter<NewsAdapter.ViewHolder>() {
+class NewsAdapter(var newsList:MutableList<News>,var contex:Context): RecyclerView.Adapter<NewsAdapter.ViewHolder>() {
     class ViewHolder(view:View): RecyclerView.ViewHolder(view) {
         var title:TextView
         var dateAndWriter:TextView
         var description:TextView
-        var imageView:TextView
+        var imageView:ImageView
         init {
             view.apply {
                 title=findViewById(R.id.title)
@@ -41,8 +43,8 @@ class NewsAdapter(var newsList:MutableList<News>): RecyclerView.Adapter<NewsAdap
     holder.apply {
         title.text=newsList[position].title
         description.text=newsList[position].description
-        dateAndWriter.text=newsList[position].date+"\n"+newsList[position].writer
-        //imageView.text=newsList[position].imageUri
+        dateAndWriter.text=newsList[position].publishedAt+"\n"+newsList[position].author
+        Glide.with(contex).load(newsList[position].urlToImage).into(imageView)
 
     }
     }
